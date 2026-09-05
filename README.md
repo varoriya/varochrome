@@ -29,11 +29,13 @@ Transform any image or text from **ChatGPT, Gemini, Pinterest, AiPASS** or any w
 
 ### Install (sideload from GitHub)
 
-1. Download the latest `.zip` from [Releases](https://github.com/varoriya/varochrome/releases)
+1. Download the latest `.zip`: [VaroChrome-2.0.3.zip](https://github.com/varoriya/varochrome/raw/main/dist/VaroChrome-2.0.3.zip)
 2. Unzip to a folder
 3. Open `chrome://extensions`
 4. Enable **Developer mode** (top right)
 5. Click **Load unpacked** → select the unzipped folder
+
+> 💡 ตรวจสอบเวอร์ชันล่าสุดได้ที่ [dist/](https://github.com/varoriya/varochrome/tree/main/dist) หรือ [Releases](https://github.com/varoriya/varochrome/releases)
 
 ### Use
 
