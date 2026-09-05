@@ -35,7 +35,7 @@ Transform any image or text from **ChatGPT, Gemini, Pinterest, AiPASS** or any w
 4. Enable **Developer mode** (top right)
 5. Click **Load unpacked** → select the unzipped folder
 
-> 💡 ตรวจสอบเวอร์ชันล่าสุดได้ที่ [dist/](https://github.com/varoriya/varochrome/tree/main/dist) หรือ [Releases](https://github.com/varoriya/varochrome/releases)
+> 💡 ตรวจสอบเวอร์ชันล่าสุดได้ที่ [dist/](https://github.com/varoriya/varochrome/tree/main/dist)
 
 ### Use
 
