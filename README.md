@@ -1,7 +1,7 @@
 # VaroChrome 2.0
 
 <p align="center">
-  <img src="icons/varoicon128.png" alt="VaroChrome" width="128" height="128">
+  <img src="screenshots/cover.png" alt="VaroChrome" width="600">
 </p>
 
 > Omni-Media Studio for Chromium Browsers
