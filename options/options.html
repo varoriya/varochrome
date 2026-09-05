@@ -14,25 +14,48 @@
           <h1>VaroChrome 2.0</h1>
           <p class="tag">Omni-Media Studio for Chromium Browsers</p>
         </div>
+        <div class="lang-pill">
+          <button id="langTh" class="active">TH</button>
+          <button id="langEn">EN</button>
+        </div>
+      </div>
+
+      <!-- Cover Image -->
+      <div class="cover">
+        <img src="../screenshots/cover.png" alt="VaroChrome Cover" />
       </div>
 
       <!-- Connected state -->
       <section class="card" id="connectedCard" style="display: none">
-        <h2>✓ เชื่อมบัญชีแล้ว</h2>
-        <p class="muted">
+        <h2 data-i18n="connectedTitle">✓ เชื่อมบัญชีแล้ว</h2>
+        <p class="muted" data-i18n="connectedDesc">
           บัญชี: <b id="accountName">—</b> — พร้อมสร้างภาพ / วิดีโอ / เสียงพากย์ไทยบน
-          de.aipass.net
+          de.aipass.net, chatgpt.com, gemini.google.com, และ pinterest.com
         </p>
         <div class="actions">
-          <button id="start" class="primary" type="button">เริ่มใช้งานบน de.aipass.net →</button>
-          <button id="disconnect" class="ghost" type="button">ยกเลิกการเชื่อม</button>
+          <button id="startPinterest" class="primary btn-icon" type="button">
+            <img class="ico" src="https://cdn.varoriya.com/varochrome/icon/icon-pinterest.jpg" alt="Pinterest" />
+          </button>
+          <button id="startChatgpt" class="primary btn-icon" type="button">
+            <img class="ico" src="https://cdn.varoriya.com/varochrome/icon/icon-chatgpt.jpg" alt="ChatGPT" />
+          </button>
+          <button id="startGemini" class="primary btn-icon" type="button">
+            <img class="ico" src="https://cdn.varoriya.com/varochrome/icon/icon-gemini.jpg" alt="Gemini" />
+          </button>
+          <button id="startAipass" class="primary btn-icon" type="button">
+            <img class="ico" src="https://cdn.varoriya.com/varochrome/icon/icon-aipass.jpg" alt="AiPASS" />
+          </button>
+          <button id="disconnect" class="ghost btn-icon" type="button">
+            <svg class="ico" viewBox="0 0 24 24"><path fill="currentColor" d="M17 7h-3V3h-4v4H7l5 5 5-5zm0 10h-3v4h-4v-4H7l5-5 5 5z"/></svg>
+            ยกเลิกการเชื่อม
+          </button>
         </div>
       </section>
 
       <!-- Connect (primary path) -->
       <section class="card" id="connectCard">
-        <h2>เชื่อมบัญชี Varoriya</h2>
-        <p class="muted">
+        <h2 data-i18n="connectTitle">เชื่อมบัญชี Varoriya</h2>
+        <p class="muted" data-i18n="connectDesc">
           ถ้าคุณล็อกอิน <code>varoriya.com</code> อยู่แล้ว กดปุ่มเดียวจบ — ระบบจะสร้าง
           Key ให้อัตโนมัติ ไม่ต้องคัดลอก
         </p>
@@ -40,25 +63,16 @@
           <button id="connect" class="primary" type="button">เชื่อมบัญชี Varoriya (คลิกเดียว)</button>
           <span id="connectStatus" class="status"></span>
         </div>
-        <p class="consent-note">
+        <p class="consent-note" data-i18n="consentNote">
           การเชื่อมบัญชีถือว่าคุณยินยอมให้ส่ง <b>ข้อความ/รูปภาพที่คุณเลือก</b> ไปประมวลผลสร้างสื่อ
           แบบชั่วคราวตามนโยบาย Zero-Log (ไม่เก็บ log ข้อความ)
         </p>
       </section>
 
-      <!-- No key required note -->
-      <section class="card soft">
-        <h2>ใช้ AiPASS ได้ตามปกติ</h2>
-        <p class="muted">
-          ไม่ต้องเชื่อมบัญชีก็เปิดใช้ de.aipass.net ได้เลย — ฟีเจอร์ที่ไม่ต้องใช้เหรียญ เช่น
-          ⚡ Prompt (คัดลอกไปเกลา) และเมนูคลิกขวา ใช้ได้ทันที เชื่อมบัญชีเมื่อต้องการเจนสื่อเท่านั้น
-        </p>
-      </section>
-
       <!-- Advanced: manual key -->
       <details class="card">
-        <summary>ตัวเลือกขั้นสูง — ใส่ API Key เอง</summary>
-        <p class="muted">
+        <summary data-i18n="advTitle">ตัวเลือกขั้นสูง — ใส่ API Key เอง</summary>
+        <p class="muted" data-i18n="advDesc">
           สำหรับผู้ที่มี Generation API Key อยู่แล้ว (ขึ้นต้น <code>varo_gk_</code>)
         </p>
         <div class="row">
@@ -67,19 +81,19 @@
           <button id="save" class="primary" type="button">บันทึก</button>
         </div>
         <div class="row">
-          <a id="getKey" class="link" href="#" target="_blank">รับ / สร้าง API Key</a>
-          <a id="docs" class="link" href="#" target="_blank">เอกสาร API Reference</a>
+          <a id="getKey" class="link" href="#" target="_blank" data-i18n="getKeyLink">รับ / สร้าง API Key</a>
+          <a id="docs" class="link" href="#" target="_blank" data-i18n="docsLink">เอกสาร API Reference</a>
         </div>
         <span id="saveStatus" class="status"></span>
       </details>
 
       <!-- Default models -->
       <details class="card">
-        <summary>โมเดลเริ่มต้น</summary>
+        <summary data-i18n="modelsTitle">โมเดลเริ่มต้น</summary>
         <div class="grid">
-          <label>ภาพ<select id="mImage"></select></label>
-          <label>วิดีโอ<select id="mVideo"></select></label>
-          <label>เสียง<select id="mAudio"></select></label>
+          <label data-i18n="mImage">ภาพ<select id="mImage"></select></label>
+          <label data-i18n="mVideo">วิดีโอ<select id="mVideo"></select></label>
+          <label data-i18n="mAudio">เสียง<select id="mAudio"></select></label>
         </div>
         <div class="actions">
           <button id="saveModels" class="ghost" type="button">บันทึกโมเดล</button>
@@ -87,9 +101,9 @@
         </div>
       </details>
 
-      <p class="disclaimer">
+      <p class="disclaimer" data-i18n="disclaimer">
         ส่วนเสริมนี้เป็นเครื่องมืออิสระที่พัฒนาโดย Varoriya เพื่ออำนวยความสะดวกในการใช้งาน
-        <b>ไม่ใช่ระบบทางการของรัฐ</b> และไม่มีส่วนเกี่ยวข้องอย่างเป็นทางการกับผู้ให้บริการ AiPASS
+        <b>ไม่ใช่ระบบทางการของรัฐ</b> และไม่มีส่วนเกี่ยวข้องอย่างเป็นทางการกับผู้ให้บริการใดๆ
         รองรับเบราว์เซอร์กลุ่ม Chromium (Chrome, Edge, Brave, Opera)
       </p>
     </main>

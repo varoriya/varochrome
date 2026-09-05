@@ -157,6 +157,40 @@ button {
   margin-top: 4px;
   flex-wrap: wrap;
 }
+.btn-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 12px !important;
+}
+.btn-icon .ico {
+  display: inline-block !important;
+  width: auto !important;
+  height: 24px !important;
+  min-height: 24px !important;
+  max-height: 28px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+.btn-icon img.ico {
+  object-fit: contain;
+}
+/* disconnect button text + small svg */
+.btn-icon svg.ico {
+  width: 18px !important;
+  height: 18px !important;
+}
+.primary.btn-icon svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+.ghost.btn-icon svg {
+  color: var(--varo-orange-dark) !important;
+  fill: var(--varo-orange-dark) !important;
+}
 .status {
   font-size: 12px;
   color: var(--varo-orange-dark);
@@ -207,5 +241,41 @@ details.card[open] > summary::before {
 }
 details.card > summary + * {
   margin-top: 12px;
+}
+
+/* Cover image */
+.cover {
+  margin-bottom: 22px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+.cover img {
+  width: 100%;
+  display: block;
+}
+
+/* Language pills */
+.lang-pill {
+  margin-left: auto;
+  display: flex;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.lang-pill button {
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink-soft);
+}
+.lang-pill button.active {
+  background: var(--varo-orange);
+  color: #fff;
+}
+.lang-pill button:hover:not(.active) {
+  background: var(--varo-orange-soft);
 }
 
