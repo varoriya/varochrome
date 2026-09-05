@@ -1,0 +1,62 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_extName__",
+  "version": "2.0.2",
+  "description": "__MSG_extDescription__",
+  "default_locale": "en",
+  "minimum_chrome_version": "114",
+  "permissions": [
+    "activeTab",
+    "contextMenus",
+    "storage",
+    "sidePanel",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://de.aipass.net/*",
+    "https://aipass.net/*",
+    "https://chatgpt.com/*",
+    "https://gemini.google.com/*",
+    "https://pinterest.com/*",
+    "https://www.pinterest.com/*",
+    "https://api.varoriya.com/*",
+    "https://varoriya.com/*",
+    "https://registry.varoriya.com/*"
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  },
+  "homepage_url": "https://varoriya.com",
+  "action": {
+    "default_title": "VaroChrome 2.0",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "side_panel": {
+    "default_path": "sidepanel/sidepanel.html"
+  },
+  "options_page": "options/options.html",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content/selectors.js", "content/studio.js", "content/content.js"],
+      "css": ["content/content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/*", "fonts/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

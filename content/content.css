@@ -1,0 +1,206 @@
+/* Varo for AiPASS — in-page styles. Namespaced (.varo-*) + high z-index so
+   they don't collide with de.aipass.net. Orange = Varo brand surface.
+   The Material Symbols @font-face is injected from content.js via
+   chrome.runtime.getURL (relative url() here resolves against the page origin). */
+
+:root {
+  --varo-orange: #ff6a00;
+  --varo-orange-2: #ff8a1e;
+  --varo-orange-dark: #e85d00;
+}
+
+.varo-symbol {
+  font-family: "Varo Material Symbols";
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  font-size: 18px;
+  vertical-align: middle;
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+}
+
+.varo-bubble,
+.varo-img-overlay {
+  position: absolute;
+  z-index: 2147483000;
+  display: none;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--varo-orange-2), var(--varo-orange));
+  box-shadow: 0 6px 20px rgba(232, 93, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.varo-bubble button,
+.varo-img-overlay button {
+  all: unset;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  border-radius: 50%;
+  color: #fff;
+  transition: transform 0.12s ease, background 0.12s ease;
+}
+
+.varo-bubble button:hover,
+.varo-img-overlay button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+.varo-img-overlay button img {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  display: block;
+}
+
+.varo-actionbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  padding: 5px 8px;
+  border-radius: 10px;
+  opacity: 0.55;
+  transition: opacity 0.15s ease;
+  background: linear-gradient(135deg, var(--varo-orange-2), var(--varo-orange));
+  box-shadow: 0 3px 10px rgba(232, 93, 0, 0.25);
+  flex-wrap: wrap;
+}
+
+.varo-actionbar:hover {
+  opacity: 1;
+}
+
+.varo-actionbar .varo-brand {
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  color: #fff;
+  padding: 0 4px;
+}
+
+.varo-actionbar button {
+  all: unset;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 8px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.18);
+  transition: background 0.12s ease;
+}
+
+.varo-actionbar button .varo-symbol {
+  font-size: 16px;
+}
+
+.varo-actionbar button:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* Varo icon embedded into the AiPASS answer toolbar (sits next to native buttons) */
+.varo-embed-btn {
+  all: unset;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  vertical-align: middle;
+  transition: background 0.12s ease;
+}
+.varo-embed-btn:hover {
+  background: rgba(255, 106, 0, 0.14);
+}
+.varo-embed-btn img {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  display: block;
+}
+
+/* ChatGPT action bar: buttons are 32x32 with rounded-lg */
+.varo-embed-btn.chatgpt-style {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+}
+.varo-embed-btn.chatgpt-style img {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+}
+
+/* Gemini action bar: buttons are in message-actions .buttons-container-v2 */
+.varo-embed-btn.gemini-style {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: transparent;
+  transition: background 0.12s ease;
+}
+.varo-embed-btn.gemini-style:hover {
+  background: rgba(255, 106, 0, 0.14);
+}
+.varo-embed-btn.gemini-style img {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+/* Pinterest: closeup detail page only — matches native 48x48 circular buttons */
+.varo-embed-btn.pinterest-style {
+  all: unset;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  transition: background 0.12s ease;
+}
+.varo-embed-btn.pinterest-style:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+.varo-embed-btn.pinterest-style img {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  opacity: 0.95;
+}
+}
+
+.varo-toast {
+  position: fixed;
+  z-index: 2147483600;
+  left: 50%;
+  bottom: 24px;
+  transform: translate(-50%, 20px);
+  max-width: 80vw;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  color: #fff;
+  background: rgba(20, 20, 28, 0.95);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.varo-toast.varo-show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}

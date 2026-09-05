@@ -1,0 +1,211 @@
+:root {
+  --varo-orange: #ff6a00;
+  --varo-orange-dark: #e85d00;
+  --varo-orange-soft: #fff3ea;
+  --ink: #1f2430;
+  --ink-soft: #5b6472;
+  --line: #e7eaf0;
+  --bg: #f5f7fb;
+  --card: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Sarabun", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+.wrap {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 28px 20px 60px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+.brand img {
+  border-radius: 9px;
+}
+h1 {
+  margin: 0;
+  font-size: 20px;
+}
+.tag {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--varo-orange); /* orange rail = Varo control surface */
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(17, 24, 39, 0.04);
+}
+h2 {
+  margin: 0 0 10px;
+  font-size: 14px;
+}
+.muted {
+  color: var(--ink-soft);
+  font-size: 12px;
+  margin: 0 0 10px;
+}
+code {
+  background: var(--varo-orange-soft);
+  color: var(--varo-orange-dark);
+  padding: 1px 5px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+.row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 8px;
+}
+input[type="password"],
+input[type="text"] {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 9px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  font-size: 13px;
+}
+input[type="password"]:focus,
+input[type="text"]:focus,
+select:focus {
+  outline: none;
+  border-color: var(--varo-orange);
+  box-shadow: 0 0 0 3px rgba(255, 106, 0, 0.12);
+}
+select {
+  width: 100%;
+  margin-top: 6px;
+  padding: 9px 10px;
+  border-radius: 9px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+.grid label {
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+.link {
+  color: var(--varo-orange-dark);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+}
+.link:hover {
+  text-decoration: underline;
+}
+.consent {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.consent input {
+  margin-top: 3px;
+  accent-color: var(--varo-orange);
+}
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 9px;
+  font-size: 13px;
+  padding: 9px 16px;
+}
+.ghost {
+  background: #fff;
+  color: var(--varo-orange-dark);
+  border: 1px solid var(--varo-orange);
+}
+.ghost:hover {
+  background: var(--varo-orange-soft);
+}
+.primary {
+  background: var(--varo-orange);
+  color: #fff;
+  font-weight: 600;
+}
+.primary:hover {
+  background: var(--varo-orange-dark);
+}
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+.status {
+  font-size: 12px;
+  color: var(--varo-orange-dark);
+}
+.disclaimer {
+  margin-top: 22px;
+  font-size: 11px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+
+/* soft card = no orange rail (not a Varo action surface, just info) */
+.card.soft {
+  border-left: 1px solid var(--line);
+  background: #fbfcfe;
+}
+
+.consent-note {
+  margin: 12px 0 0;
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  background: var(--varo-orange-soft);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+details.card > summary {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  list-style: none;
+}
+details.card > summary::-webkit-details-marker {
+  display: none;
+}
+details.card > summary::before {
+  content: "▸";
+  color: var(--varo-orange);
+  margin-right: 8px;
+  display: inline-block;
+  transition: transform 0.15s ease;
+}
+details.card[open] > summary::before {
+  transform: rotate(90deg);
+}
+details.card > summary + * {
+  margin-top: 12px;
+}
+

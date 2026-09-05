@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ตั้งค่า — VaroChrome 2.0</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <div class="brand">
+        <img src="../icons/icon48.png" width="34" height="34" alt="Varo" />
+        <div>
+          <h1>VaroChrome 2.0</h1>
+          <p class="tag">Omni-Media Studio for Chromium Browsers</p>
+        </div>
+      </div>
+
+      <!-- Connected state -->
+      <section class="card" id="connectedCard" style="display: none">
+        <h2>✓ เชื่อมบัญชีแล้ว</h2>
+        <p class="muted">
+          บัญชี: <b id="accountName">—</b> — พร้อมสร้างภาพ / วิดีโอ / เสียงพากย์ไทยบน
+          de.aipass.net
+        </p>
+        <div class="actions">
+          <button id="start" class="primary" type="button">เริ่มใช้งานบน de.aipass.net →</button>
+          <button id="disconnect" class="ghost" type="button">ยกเลิกการเชื่อม</button>
+        </div>
+      </section>
+
+      <!-- Connect (primary path) -->
+      <section class="card" id="connectCard">
+        <h2>เชื่อมบัญชี Varoriya</h2>
+        <p class="muted">
+          ถ้าคุณล็อกอิน <code>varoriya.com</code> อยู่แล้ว กดปุ่มเดียวจบ — ระบบจะสร้าง
+          Key ให้อัตโนมัติ ไม่ต้องคัดลอก
+        </p>
+        <div class="actions">
+          <button id="connect" class="primary" type="button">เชื่อมบัญชี Varoriya (คลิกเดียว)</button>
+          <span id="connectStatus" class="status"></span>
+        </div>
+        <p class="consent-note">
+          การเชื่อมบัญชีถือว่าคุณยินยอมให้ส่ง <b>ข้อความ/รูปภาพที่คุณเลือก</b> ไปประมวลผลสร้างสื่อ
+          แบบชั่วคราวตามนโยบาย Zero-Log (ไม่เก็บ log ข้อความ)
+        </p>
+      </section>
+
+      <!-- No key required note -->
+      <section class="card soft">
+        <h2>ใช้ AiPASS ได้ตามปกติ</h2>
+        <p class="muted">
+          ไม่ต้องเชื่อมบัญชีก็เปิดใช้ de.aipass.net ได้เลย — ฟีเจอร์ที่ไม่ต้องใช้เหรียญ เช่น
+          ⚡ Prompt (คัดลอกไปเกลา) และเมนูคลิกขวา ใช้ได้ทันที เชื่อมบัญชีเมื่อต้องการเจนสื่อเท่านั้น
+        </p>
+      </section>
+
+      <!-- Advanced: manual key -->
+      <details class="card">
+        <summary>ตัวเลือกขั้นสูง — ใส่ API Key เอง</summary>
+        <p class="muted">
+          สำหรับผู้ที่มี Generation API Key อยู่แล้ว (ขึ้นต้น <code>varo_gk_</code>)
+        </p>
+        <div class="row">
+          <input id="apiKey" type="password" placeholder="varo_gk_..." autocomplete="off" />
+          <button id="toggle" class="ghost" type="button">แสดง</button>
+          <button id="save" class="primary" type="button">บันทึก</button>
+        </div>
+        <div class="row">
+          <a id="getKey" class="link" href="#" target="_blank">รับ / สร้าง API Key</a>
+          <a id="docs" class="link" href="#" target="_blank">เอกสาร API Reference</a>
+        </div>
+        <span id="saveStatus" class="status"></span>
+      </details>
+
+      <!-- Default models -->
+      <details class="card">
+        <summary>โมเดลเริ่มต้น</summary>
+        <div class="grid">
+          <label>ภาพ<select id="mImage"></select></label>
+          <label>วิดีโอ<select id="mVideo"></select></label>
+          <label>เสียง<select id="mAudio"></select></label>
+        </div>
+        <div class="actions">
+          <button id="saveModels" class="ghost" type="button">บันทึกโมเดล</button>
+          <span id="modelStatus" class="status"></span>
+        </div>
+      </details>
+
+      <p class="disclaimer">
+        ส่วนเสริมนี้เป็นเครื่องมืออิสระที่พัฒนาโดย Varoriya เพื่ออำนวยความสะดวกในการใช้งาน
+        <b>ไม่ใช่ระบบทางการของรัฐ</b> และไม่มีส่วนเกี่ยวข้องอย่างเป็นทางการกับผู้ให้บริการ AiPASS
+        รองรับเบราว์เซอร์กลุ่ม Chromium (Chrome, Edge, Brave, Opera)
+      </p>
+    </main>
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

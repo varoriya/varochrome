@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VaroChrome 2.0</title>
+    <link rel="stylesheet" href="sidepanel.css" />
+  </head>
+  <body>
+    <header class="vp-header">
+      <img src="../icons/icon48.png" alt="Varo" width="26" height="26" />
+      <div>
+        <div class="vp-title">VaroChrome 2.0</div>
+        <div class="vp-sub">Omni-Media Studio</div>
+      </div>
+      <button id="refresh" class="vp-icon" title="รีเฟรช">⟳</button>
+    </header>
+
+    <section class="vp-wallet">
+      <div class="vp-coin-row">
+        <span class="vp-coin-label">VaroCoin</span>
+        <span id="balance" class="vp-coin">—</span>
+      </div>
+      <div id="breakdown" class="vp-breakdown"></div>
+      <a id="topup" class="vp-topup" href="#" target="_blank">เติมเงินด่วน (PromptPay QR)</a>
+    </section>
+
+    <section class="vp-section">
+      <div class="vp-section-head">งานที่กำลังประมวลผล</div>
+      <div id="jobs" class="vp-jobs"><div class="vp-empty">ยังไม่มีงาน</div></div>
+    </section>
+
+    <section class="vp-section">
+      <div class="vp-section-head">คลังสื่อ 24 ชั่วโมง</div>
+      <div id="history" class="vp-history"><div class="vp-empty">กำลังโหลด…</div></div>
+    </section>
+
+    <footer class="vp-footer">
+      <a id="keylink" href="#" target="_blank">API Key</a>
+      <span>·</span>
+      <a id="options" href="#">ตั้งค่า</a>
+      <span>·</span>
+      <a id="reflink" href="#" target="_blank">API Docs</a>
+    </footer>
+
+    <script type="module" src="sidepanel.js"></script>
+  </body>
+</html>
